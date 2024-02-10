@@ -1,0 +1,36 @@
+form {
+    position: relative;
+    top: -1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.input {
+    width: 500px;
+    border-radius: 5px; 
+    border: 1px solid #0D0D0D;
+    padding: 1rem;
+    background-color: #262626;
+    outline: none;
+}
+
+.input:focus {
+    border: 1px solid #5E60CE;
+}
+
+.input::placeholder {
+    color: #808080
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    background-color: #1E6F9F;
+    gap: 0.5rem;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
