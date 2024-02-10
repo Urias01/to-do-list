@@ -22,12 +22,13 @@ export function App() {
 
   function handleCreateTask(title: string): void { 
     const newTask =  { 
-      id: crypto.randomUUID.toString(), 
+      id: crypto.randomUUID(), 
       title: title, 
       isChecked: false
     }
     
-    setTasks(state => [...state, newTask]);
+    setTasks(state => [newTask, ...state]);
+
   }
 
   function handleCheckTask(id: string) {
@@ -74,7 +75,7 @@ export function App() {
             {task.isChecked 
             ? <img src="/src/assets/checked.svg" alt="" onClick={() => handleUncheckTask(task.id)}  />
             : <img src="/src/assets/check.svg" alt="" onClick={() => handleCheckTask(task.id)} />}
-              <p className={`${task.isChecked == true && styles.checkedTask} ${styles.titleTask}`}>{task.title}</p>
+              <p className={`${styles.titleTask} ${task.isChecked == true && styles.checkedTask}`}>{task.title}</p>
               <div className={styles.trash}>
                 <Trash2 className={styles.trashIcon}/>
               </div>
