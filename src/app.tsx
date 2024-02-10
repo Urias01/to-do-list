@@ -1,4 +1,4 @@
-import { NotepadText } from "lucide-react";
+import { NotepadText, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { Header } from "./components/Header";
 import { FormTask } from "./components/Form";
@@ -74,7 +74,10 @@ export function App() {
             {task.isChecked 
             ? <img src="/src/assets/checked.svg" alt="" onClick={() => handleUncheckTask(task.id)}  />
             : <img src="/src/assets/check.svg" alt="" onClick={() => handleCheckTask(task.id)} />}
-              {task.title}
+              <p className={`${task.isChecked == true && styles.checkedTask} ${styles.titleTask}`}>{task.title}</p>
+              <div className={styles.trash}>
+                <Trash2 className={styles.trashIcon}/>
+              </div>
             </div>
           })
           : 
