@@ -105,3 +105,60 @@ input[type="checkbox"] {
     text-decoration: line-through;
     color: #555;
 }
+
+
+@media(max-width: 620px) {
+    .description {
+        width: 400px;
+    }
+
+    .line {
+        width: 400px;
+    }
+
+    .notes {
+        width: 400px;
+    }
+
+    .emptyNotes p {
+        text-align: center;
+    }
+}
+
+@media(max-width: 425px) {
+    .description {
+        width: 320px;
+    }
+
+    .line {
+        width: 320px;
+    }
+
+    .notes {
+        width: 300px;
+    }
+
+    .emptyNotes p {
+        text-align: center;
+    }
+}
+
+@media(max-width: 340px) {
+    .description {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .line {
+        width: 280px;
+    }
+
+    .notes {
+        width: 270px;
+    }
+
+    .emptyNotes p {
+        text-align: center;
+    }
+}

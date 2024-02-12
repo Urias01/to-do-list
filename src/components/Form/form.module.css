@@ -34,3 +34,24 @@ form {
     padding: 0.5rem;
     cursor: pointer;
 }
+
+@media(max-width: 620px) {
+    .input {
+        width: 300px;
+        padding: 0.5rem;
+    }
+}
+
+@media(max-width: 425px) {
+    .input {
+        width: 250px;
+        padding: 0.5rem;
+    }
+}
+
+@media(max-width: 340px) {
+    .input {
+        width: 200px;
+        padding: 0.5rem;
+    }
+}
