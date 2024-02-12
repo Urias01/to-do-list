@@ -48,7 +48,11 @@ export function App() {
 
     tasksArray.push(taskToCheck[0]);
     setTasks(tasksArray);
+  }
 
+  function handleDeleteTask(id: string) {
+    const taskArray = tasks.filter(task => task.id !== id);
+    setTasks(taskArray);
   }
 
   return (
@@ -76,7 +80,7 @@ export function App() {
             ? <img src="/src/assets/checked.svg" alt="" onClick={() => handleUncheckTask(task.id)}  />
             : <img src="/src/assets/check.svg" alt="" onClick={() => handleCheckTask(task.id)} />}
               <p className={`${styles.titleTask} ${task.isChecked == true && styles.checkedTask}`}>{task.title}</p>
-              <div className={styles.trash}>
+              <div className={styles.trash} onClick={() => handleDeleteTask(task.id)}>
                 <Trash2 className={styles.trashIcon}/>
               </div>
             </div>
