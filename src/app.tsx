@@ -1,8 +1,9 @@
-import { NotepadText, Trash2 } from "lucide-react";
+import { NotepadText } from "lucide-react";
 import { useState } from "react";
 import { Header } from "./components/Header";
 import { FormTask } from "./components/Form";
 import styles from './app.module.css';
+import { Task } from "./components/Task";
 
 interface Task {
   id: string;
@@ -74,16 +75,13 @@ export function App() {
         { sortTasks.length > 0
         ?
         sortTasks.map((task) => {
-          return <div key={task.id} className={styles.note}>
-            <input type="checkbox" className={styles.check} />
-            {task.isChecked 
-            ? <img src="/src/assets/checked.svg" alt="" onClick={() => handleUncheckTask(task.id)}  />
-            : <img src="/src/assets/check.svg" alt="" onClick={() => handleCheckTask(task.id)} />}
-              <p className={`${styles.titleTask} ${task.isChecked == true && styles.checkedTask}`}>{task.title}</p>
-              <div className={styles.trash} onClick={() => handleDeleteTask(task.id)}>
-                <Trash2 className={styles.trashIcon}/>
-              </div>
-            </div>
+          return  (
+              <Task 
+                key={task.id}
+                task={task} 
+                functions={{handleCheckTask, handleUncheckTask, handleDeleteTask}} 
+                />
+            )
           })
           : 
           <div className={styles.emptyNotes}>
