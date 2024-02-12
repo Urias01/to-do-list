@@ -23,10 +23,10 @@ export function Task({
         <div className={styles.note}>
             <input type="checkbox" className={styles.check} />
             {task.isChecked 
-            ? <img src="/src/assets/checked.svg" 
+            ? <img src="/checked.svg" 
                 onClick={() => 
                     functions.handleUncheckTask(task.id)}  />
-            : <img src="/src/assets/check.svg"
+            : <img src="/check.svg"
                 onClick={() => 
                     functions.handleCheckTask(task.id)} />}
               <p className={`${styles.titleTask} 
