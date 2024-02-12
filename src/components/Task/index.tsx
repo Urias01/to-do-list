@@ -1,7 +1,7 @@
 import styles from './Task.module.css';
 import { Trash2 } from 'lucide-react';
-import check from '../../assets/check.svg';
-import checked from '../../assets/checked.svg';
+import check from '/check.svg';
+import checked from '/checked.svg';
 
 interface TaskProps {
     task: {
