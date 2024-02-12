@@ -1,5 +1,7 @@
 import styles from './Task.module.css';
 import { Trash2 } from 'lucide-react';
+import check from '../../assets/check.svg';
+import checked from '../../assets/checked.svg';
 
 interface TaskProps {
     task: {
@@ -23,10 +25,10 @@ export function Task({
         <div className={styles.note}>
             <input type="checkbox" className={styles.check} />
             {task.isChecked 
-            ? <img src="/src/assets/checked.svg" 
+            ? <img src={checked} 
                 onClick={() => 
                     functions.handleUncheckTask(task.id)}  />
-            : <img src="/src/assets/check.svg"
+            : <img src={check}
                 onClick={() => 
                     functions.handleCheckTask(task.id)} />}
               <p className={`${styles.titleTask} 
